@@ -3,7 +3,7 @@ import { loadSchemaSync } from '@graphql-tools/load';
 import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
 import { addResolversToSchema } from '@graphql-tools/schema';
 import { join } from 'path';
-import { ApolloServer } from 'apollo-server-express';
+import { graphqlHTTP } from 'express-graphql';
 
 import { DB } from './db/db';
 import { resolvers } from './resolvers/resolvers';
@@ -27,22 +27,15 @@ const schemaWithResolvers = addResolversToSchema({
   resolvers,
 });
 
-async function startApolloServer() {
-  const endPoint = '/gql';
-  const server = new ApolloServer({
-    schema: schemaWithResolvers
-  });
+const app = express();
 
-  const app = express();
-  await server.start();
-  server.applyMiddleware({
-    path: endPoint,
-    app
-  });
+app.use(
+  graphqlHTTP({
+    schema: schemaWithResolvers,
+    graphiql: true,
+  })
+);
 
-  app.listen(4000, () => {
-    console.info(`Server listening on http://localhost:4000${server.graphqlPath}`);
-  });
-}
-
-startApolloServer();
+app.listen(4000, () => {
+  console.info('Server listening on http://localhost:4000');
+});
