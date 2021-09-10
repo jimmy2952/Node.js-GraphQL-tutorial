@@ -1,0 +1,15 @@
+type User {
+  id: Int
+  username: String
+  email: String
+}
+
+input UserIdRequest {
+  id: Int
+}
+
+input UserRequest {
+  id: Int
+  username: String
+  email: String
+}

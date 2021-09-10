@@ -1,0 +1,11 @@
+# import * from "./user.graphql"
+type Query {
+  getUsers: [User]
+  getUser(request: UserIdRequest): User
+}
+
+type Mutation {
+  createUser(request: UserRequest): User
+  updateUser(request: UserRequest): User
+  deleteUser(request: UserIdRequest): User
+}

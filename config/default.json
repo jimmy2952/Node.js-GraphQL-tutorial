@@ -1,0 +1,11 @@
+{
+  "db": {
+    "user": "postgres",
+    "password": "",
+    "host": "localhost",
+    "port": 5432,
+    "database": "graphql-nodejs-tutorial",
+    "tsconfig": "./tsconfig.json",
+    "migration-filename-format": "utc"
+  }
+}

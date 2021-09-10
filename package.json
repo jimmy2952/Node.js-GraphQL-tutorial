@@ -1,0 +1,35 @@
+{
+  "name": "graphql-node.js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.ts",
+    "migrate": "node-pg-migrate"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^14.11.2",
+    "@types/pg": "^8.6.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.0",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@graphql-tools/graphql-file-loader": "^7.1.0",
+    "@graphql-tools/load": "^7.3.0",
+    "@graphql-tools/schema": "^8.2.0",
+    "apollo-server-express": "^3.3.0",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "node-pg-migrate": "^5.10.0",
+    "pg": "^8.7.1"
+  }
+}
